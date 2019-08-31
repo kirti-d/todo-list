@@ -1,0 +1,82 @@
+ 
+body{
+    display:flex;
+    justify-content:center;
+}
+h1{
+    color:grey;
+    font-family: monospace;
+    font-size:3rem;
+}
+form{
+    display:inline;
+}
+#container{
+    text-align: center;
+    background-color:rgba(253, 248, 200, 0.952);
+    width:80vw;
+}
+/* styling add and delete buttons */
+.black{
+    background-color: black;
+   
+}
+.red{
+    background-color: red;
+   
+}
+.button{
+    height:10vh;
+    margin:5px;
+    width:10vw;
+    color:white;
+    font-family: monospace;
+    font-size: 2rem;
+    border:none;
+    border-radius:4px;
+}
+
+
+/* styling input form */
+.input{  
+    height:8vh; 
+    width:39vw;
+} 
+textarea{
+    height:10vh;
+    width:78vw;
+} 
+table textarea{
+    font-size:1.5rem;
+    font-family: cursive;
+}
+table input{
+    font-size: 1.15rem;
+    font-family: cursive;
+}
+/* styling delete form */
+p{
+    margin:0vw 2vw;
+}
+span{
+    display:inline-block;
+    padding:2vh;
+    min-width:8.5vw;
+    background-color:gold;
+    border-radius: 4px;
+}
+.datecategory{
+    display:flex;
+    justify-content: space-between;
+    font-size:1.3rem;
+    font-weight: 400;
+    color:darkblue;
+    padding:2vw;
+}
+.iteminput{
+    width:100%;
+    text-align: start;
+    font-size: 1.5rem;
+    color:darkblue;
+    font-family: cursive;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <!-- link to our css file -->
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- outer most container -->
+        <div id="container">
+            <!-- heading -->
+            <div>
+             <h1>TODO APP</h1>
+            </div>
+           <!-- input form -->
+            <form method="POST" action="/add">
+                <table>
+                    <!-- description -->
+                    <tr>
+                        <td colspan="2">
+                        <textarea name="description"placeholder="description : what do you need to do"></textarea>
+                        </td>
+                    </tr>
+                    <!-- category and date -->
+                    <tr>
+                        <td>
+                            <input class="input" list="cat" type="text" placeholder="Category : choose a category" name="category">
+                            <datalist id="cat">
+                                    <option value="bank">
+                                    <option value="personal">
+                                    <option value="work">
+                            </datalist>
+                        </td>
+                        <td>
+                            <input class="input"type="date" name="date">
+                        </td>
+                    </tr>
+                </table>
+           
+          <!-- submit button -->
+            <button class="button black" type="submit">add task</button>  
+        </form>
+        <!-- delete form -->
+                <form action="/delete" method="POST"">
+                    
+                    <!-- delete button -->
+
+                   <button class="button red" type="submit">delete</button>
+
+                   <!-- loop to display all elements -->
+
+                   <%for(let i of list){%>
+                    <div>
+
+                    <!-- checkbox displaying description-->
+
+                    <div class="iteminput">
+                   <input type="checkbox" name="<%=i._id%>"><%=i.description%><br>
+                    </div>
+
+                    <!-- display date and category -->
+
+                   <div  class="datecategory">
+                   <p><%=i.date%></p>
+
+                  <!-- depending on category change background-color -->
+
+                    <% if(i.category=='work'){%>
+
+                    <span style="background-color: aqua">
+                        <p><%=i.category%></p>
+                    </span>
+
+                    <% }else if(i.category=='personal'){%>
+                    <span style="background-color: lightcoral">
+                    <p><%=i.category%></p>
+                    </span>
+
+                   <%}else if(i.category=='bank'){%>
+                    <span style="background-color:yellow">
+                    <p><%=i.category%></p>
+                    </span>
+                    
+                   <%}else{%>
+                    <span >
+                        <p><%=i.category%></p>
+                        </span>
+                    <%}%>
+                   
+                   </div>
+               </div>
+                <%}%>
+               </form>
+           
+
+    </div>
+    </body>
+</html>
